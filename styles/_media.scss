@@ -1,0 +1,37 @@
+﻿@use 'sass:math';
+@use 'variables' as *;
+
+@mixin fluid-text($max: 1.25, $min: 1) {
+    $slope: math.div($max - $min, $viewport-max - $viewport-min);
+    $intercept: $min - $slope * $viewport-min;
+    font-size: clamp(#{$min}rem, #{$intercept}rem + #{$slope * 100}vw, #{$max}rem);
+}
+
+@mixin container-main {
+    width: 100%;
+    max-width: $container-width + $container-padding-x * 2;
+    padding-inline: $container-padding-x;
+    margin-inline: auto;
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-inline: $container-padding-mobile;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-small {
+    @media (max-width: $breakpoint-mobile-small) {
+        @content;
+    }
+}

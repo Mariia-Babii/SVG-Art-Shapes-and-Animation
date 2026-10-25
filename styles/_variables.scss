@@ -1,0 +1,38 @@
+$font-family-base: 'Oswald', sans-serif;
+$font-family-code: Consolas, 'Courier New', monospace;
+$container-width: 70rem;
+$container-padding-x: 1rem;
+$viewport-min: 22.5;
+$viewport-max: 80;
+$breakpoint-tablet: 56rem;
+$breakpoint-mobile: 34rem;
+$breakpoint-mobile-small: 24rem;
+$container-padding-mobile: 0.75rem;
+$layout-gap-tablet: 1.25rem;
+$layout-gap-mobile: 1rem;
+$section-padding: 1rem;
+$section-padding-mobile: 0.75rem;
+$card-gap: 1rem;
+$card-gap-mobile: 0.625rem;
+$card-padding: 0.625rem;
+$card-padding-mobile: 0.5rem;
+$header-padding-mobile: 1.25rem;
+$title-size-mobile: 1.3em;
+$section-title-size-mobile: 1.4em;
+$code-font-size: 0.75rem;
+$color-dark: #151515;
+$color-light: #fafaf7;
+$color-panel: #f0f0eb;
+$color-border: #969993;
+$color-card-border: #d5d7cf;
+$color-dark-blue: #24558f;
+$color-code: #e7e8e1;
+$radius-panel: 0.5rem;
+$radius-card: 0.375rem;
+$layout-gap: 1.5rem;
+
+%flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

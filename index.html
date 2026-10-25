@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>SVG Art Shapes and Animations</title>
+</head>
+<body class="page">
+    <svg class="page__symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <linearGradient id="star-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#80d841" />
+                <stop offset="100%" stop-color="#3174db" />
+            </linearGradient>
+            <linearGradient id="path-gradient" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#267ed7" />
+                <stop offset="48%" stop-color="#535896" />
+                <stop offset="100%" stop-color="#d92f42" />
+            </linearGradient>
+        </defs>
+        <symbol id="icon-phone" viewBox="0 0 100 100">
+            <path fill="currentColor" d="M23 17C17 18 12 24 13 33c3 25 25 48 49 54 9 2 14-1 18-9l4-9c1-3 0-5-3-6l-15-7c-3-1-5 0-7 3l-5 7C43 61 35 53 30 42l7-5c3-2 4-4 3-7l-7-14c-2-4-6-1-10 1Z" />
+            <g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+                <path d="M53 14c19 1 33 15 34 34" />
+                <path d="M53 25c13 1 22 10 23 23" />
+                <path d="M53 36c6 1 11 6 12 12" />
+            </g>
+        </symbol>
+    </svg>
+
+    <header class="header">
+        <h1 class="header__title">
+            <a class="header__link" href="./" lang="en">SVG Design Studio - Advance Shape and Symbol Workspace</a>
+        </h1>
+        <p class="header__description">
+            Це інтерактивне середовище демонструє розширене використання SVG для створення складних форм та перевикористання елементів. Вивчайте різні типи об’єктів та використання символів для оптимізації веб-графіки.
+        </p>
+    </header>
+
+    <main class="page__main">
+        <section class="svg-section" aria-labelledby="objects-title">
+            <h2 class="svg-section__title" id="objects-title">Типи SVG-об’єктів</h2>
+            <div class="svg-section__grid">
+                <div class="svg-card">
+                    <p class="svg-card__label">&lt;polygon&gt;</p>
+                    <svg class="svg-card__preview" viewBox="0 0 200 180" role="img" aria-label="Зірка з зеленим і синім градієнтом">
+                        <polygon points="100,15 122,66 179,72 136,111 148,165 100,137 52,165 64,111 21,72 78,66" fill="url(#star-gradient)" style="stroke: #386984; stroke-width: 5" />
+                    </svg>
+                </div>
+                <div class="svg-card">
+                    <p class="svg-card__label">&lt;path&gt;</p>
+                    <svg class="svg-card__preview" viewBox="0 0 200 180" role="img" aria-label="Абстрактна фігура з синім і червоним градієнтом">
+                        <path d="M113 54C69 42 19 60 20 113c1 33 20 40 43 29 21-10-15-27 8-43 21-16 45-18 48-37 12 21-7 64-3 76 5 17 57-34 65-68 8-35-31-46-53-42-20 4-22 12-15 26Z" fill="url(#path-gradient)" />
+                    </svg>
+                </div>
+                <div class="svg-card">
+                    <p class="svg-card__label">&lt;text&gt;</p>
+                    <svg class="svg-card__preview" viewBox="0 0 200 180" role="img" aria-label="Слово text, створене SVG-текстом">
+                        <text x="100" y="125" text-anchor="middle" font-size="86">text</text>
+                    </svg>
+                </div>
+                <div class="svg-card">
+                    <p class="svg-card__label">&lt;rect&gt; (Opacity 0.9)</p>
+                    <svg class="svg-card__preview" viewBox="0 0 200 180" role="img" aria-label="Блакитний прямокутник з чорною рамкою">
+                        <rect x="18" y="36" width="164" height="112" style="fill: #4d9be7; stroke: #111; stroke-width: 4" opacity="0.9" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="svg-section svg-section--symbols" aria-labelledby="symbols-title">
+            <h2 class="svg-section__title" id="symbols-title">Приклад &lt;symbol&gt; &amp; &lt;use&gt;</h2>
+            <h3 class="svg-section__subtitle" lang="en">Symbol Definition Re-use (Use)</h3>
+            <div class="svg-section__grid">
+                <div class="svg-section__column">
+                    <div class="svg-card svg-card--phone">
+                        <svg class="svg-card__preview svg-card__preview--phone" viewBox="0 0 100 100" role="img" aria-label="Символ телефону">
+                            <use href="#icon-phone" />
+                        </svg>
+                        <p class="svg-card__label">ID: #icon-phone</p>
+                    </div>
+                    <pre class="svg-card__code"><code>&lt;symbol id="icon-phone"
+  viewBox="0 0 100 100"&gt;
+  &lt;path d="…" /&gt;
+  &lt;g fill="none"&gt;
+    &lt;path d="…" /&gt;
+  &lt;/g&gt;
+&lt;/symbol&gt;</code></pre>
+                </div>
+                <div class="svg-section__column">
+                    <div class="svg-card svg-card--reuse">
+                        <div class="svg-card__phones" role="img" aria-label="Три копії одного символу телефону">
+                            <svg class="svg-card__phone" viewBox="0 0 100 100" aria-hidden="true"><use href="#icon-phone" /></svg>
+                            <svg class="svg-card__phone" viewBox="0 0 100 100" aria-hidden="true"><use href="#icon-phone" /></svg>
+                            <svg class="svg-card__phone" viewBox="0 0 100 100" aria-hidden="true"><use href="#icon-phone" /></svg>
+                        </div>
+                    </div>
+                    <pre class="svg-card__code"><code>&lt;svg viewBox="0 0 100 100"&gt;
+  &lt;use href="#icon-phone" /&gt;
+&lt;/svg&gt;
+
+.svg-card__phone {
+  color: #24558f;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text" lang="en">This site was created solely for educational purposes.</p>
+    </footer>
+</body>
+</html>
