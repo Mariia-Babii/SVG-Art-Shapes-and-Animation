@@ -1,0 +1,58 @@
+.svg-card__preview > polygon,
+.svg-card__preview > path,
+.svg-card__preview > text,
+.svg-card__preview > rect,
+.svg-card__preview--phone > use,
+.svg-card__phone > use {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.svg-card__preview > polygon {
+    animation: star-turn 6s ease-in-out infinite;
+}
+
+.svg-card__preview > path {
+    animation: shape-float 4s ease-in-out infinite;
+}
+
+.svg-card__preview > text,
+.svg-card__preview > rect {
+    animation: shape-pulse 3s ease-in-out infinite;
+}
+
+.svg-card__preview--phone > use,
+.svg-card__phone > use {
+    animation: phone-ring 3s ease-in-out infinite;
+}
+
+.svg-card__phone:nth-child(2) > use { animation-delay: 0.2s; }
+.svg-card__phone:nth-child(3) > use { animation-delay: 0.4s; }
+
+@keyframes star-turn {
+    0%, 100% { transform: rotate(-8deg) scale(0.92); }
+    50% { transform: rotate(8deg) scale(1); }
+}
+
+@keyframes shape-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes shape-pulse {
+    0%, 100% { transform: scale(0.92); }
+    50% { transform: scale(1); }
+}
+
+@keyframes phone-ring {
+    0%, 20%, 100% { transform: rotate(0); }
+    4%, 12% { transform: rotate(-10deg); }
+    8%, 16% { transform: rotate(10deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .svg-card__preview > *,
+    .svg-card__phone > use {
+        animation: none;
+    }
+}
